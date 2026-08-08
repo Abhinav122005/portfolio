@@ -1,0 +1,180 @@
+{% load static %}
+<!-- Projects Section -->
+<section id="projects" class="py-5 bg-light min-vh-100 d-flex align-items-center">
+    <div class="container py-5">
+        <div class="text-center mb-5 fade-in-up">
+            <h6 class="text-primary fw-bold text-uppercase">Portfolio</h6>
+            <h2 class="display-5 fw-bold">Recent Projects</h2>
+        </div>
+
+        <!-- Filter Menu -->
+        <div class="row mb-5 fade-in-up" style="transition-delay: 0.1s;">
+            <div class="col-12 text-center">
+                <div class="project-filters d-inline-flex flex-wrap justify-content-center p-2 rounded-pill bg-white shadow-sm gap-2 border border-secondary border-opacity-25">
+                    <button class="btn btn-primary rounded-pill px-4 filter-btn active" data-filter="all">All</button>
+                    <button class="btn btn-outline-dark rounded-pill px-4 filter-btn border-0" data-filter="web">Web Dev</button>
+                    <button class="btn btn-outline-dark rounded-pill px-4 filter-btn border-0" data-filter="ai">AI & ML</button>
+                    <button class="btn btn-outline-dark rounded-pill px-4 filter-btn border-0" data-filter="data">Data Science & IoT</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4" id="projects-grid">
+            <!-- Project 1 (New) -->
+            <div class="col-lg-4 col-md-6 fade-in-up project-item" data-category="web" style="transition-delay: 0.1s;">
+                <div class="card project-card border-0 rounded-4 overflow-hidden shadow-sm h-100">
+                    <div class="project-img-wrapper position-relative">
+                        <img src="{% static 'portfolio_app/img/weather_app.png' %}"
+                            class="card-img-top" alt="Weather Application">
+                        <div class="project-overlay d-flex align-items-center justify-content-center gap-3">
+                            <a href="https://github.com/Abhinav122005/weather_application.git" target="_blank" class="btn btn-light rounded-circle p-3" title="GitHub Repo"><i class="fab fa-github"></i></a>
+                            <a href="https://weather-application-nk7g.onrender.com" target="_blank" class="btn btn-light rounded-circle p-3" title="Live Site"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-body p-4">
+                        <span class="badge bg-primary-subtle text-primary mb-2">Python + Django + HTML + CSS + JS</span>
+                        <h4 class="card-title fw-bold">Weather Application</h4>
+                        <p class="card-text text-muted">A full-stack Django weather application featuring user authentication and real-time weather data retrieval with a modern UI.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="col-lg-4 col-md-6 fade-in-up project-item" data-category="ai" style="transition-delay: 0.1s;">
+                <div class="card project-card border-0 rounded-4 overflow-hidden shadow-sm h-100">
+                    <div class="project-img-wrapper position-relative">
+                        <img src="https://images.openai.com/static-rsc-4/mUxP0j01wdk7jFm7A-pPVfVW6O6OnItRamPU8Gw9OnZ-YsCmLNozpTCFIb5xhnxgp__lpADKZ0W6LYRblz_xEPUNS2j09QITQwFoeXsbYBX6C3YNc6hUbPkstBYV4L0LEBr5Ru86ZNLH9JCO3-E3Vrw01Ncs6uDblM1saBvGboq0AQ-zzSHpzIT8Yp5rfiLa?purpose=fullsize"
+                            class="card-img-top" alt="Project 1">
+                        <div class="project-overlay d-flex align-items-center justify-content-center">
+                            <a href="https://github.com/Abhinav122005/ACTIVITY-DESCRIPTION-WITH-VOICE-OUTPUT.git" class="btn btn-light rounded-circle p-3"><i class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-body p-4">
+                        <span class="badge bg-primary-subtle text-primary mb-2">Python + Streamlit + NLP</span>
+                        <h4 class="card-title fw-bold">AI Image Describer with Voice</h4>
+                        <p class="card-text text-muted">This project presents an AI-Based Image Description and Voice Narration System developed using Gemini Vision and the Streamlit framework.
+                            </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="col-lg-4 col-md-6 fade-in-up project-item" data-category="web" style="transition-delay: 0.3s;">
+                <div class="card project-card border-0 rounded-4 overflow-hidden shadow-sm h-100">
+                    <div class="project-img-wrapper position-relative">
+                        <img src="{% static 'portfolio_app/img/expense_tracker.png' %}"
+                            class="card-img-top" alt="Personal Expense Tracker">
+                        <div class="project-overlay d-flex align-items-center justify-content-center gap-3">
+                            <a href="https://github.com/Abhinav122005/Personal-Expense-tracker.git" target="_blank" class="btn btn-light rounded-circle p-3" title="GitHub Repo"><i class="fab fa-github"></i></a>
+                            <a href="https://personal-expense-tracker-9v5a.onrender.com" target="_blank" class="btn btn-light rounded-circle p-3" title="Live Site"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-body p-4">
+                        <span class="badge bg-primary-subtle text-primary mb-2">Python + Django</span>
+                        <h4 class="card-title fw-bold">Personal Expense Tracker</h4>
+                        <p class="card-text text-muted">A comprehensive web application to track personal income, manage expenses, and visualize spending habits with a modern UI.</p>
+                    </div>
+                </div>
+            </div>
+            
+            {% if not is_home_page %}
+            <!-- Project 4 -->
+            <div class="col-lg-4 col-md-6 fade-in-up project-item" data-category="web" style="transition-delay: 0.2s;">
+                <div class="card project-card border-0 rounded-4 overflow-hidden shadow-sm h-100">
+                    <div class="project-img-wrapper position-relative">
+                        <img src="https://images.openai.com/static-rsc-4/Jyk48LyrrNCxRcUsvoQt2xPoNi-MFcXDbBHSZmRwsau_gtWj_45smLCfn7jP-PxLCRogYyH0l38H75Y3H-FOJ-bDCvMX6Oa_oA4tPoxFeqMDrM1QQKunewGGlABlP6nTt9mNdyndJ7fHq0uRoTRR2oW7uZILmoVavuVhH_lmzx_HKwF5G9baOqvt4TI7A-jq?purpose=fullsize"
+                            class="card-img-top" alt="URL Shortener">
+                        <div class="project-overlay d-flex align-items-center justify-content-center">
+                            <a href="#" class="btn btn-light rounded-circle p-3"><i class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-body p-4">
+                        <span class="badge bg-primary-subtle text-primary mb-2">Python + Django</span>
+                        <h4 class="card-title fw-bold">URL Shortener</h4>
+                        <p class="card-text text-muted"> Developed a full-stack web application to convert long URLs into shortened links using Django.
+                            Implemented unique ID generation with col</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5 (Samsung Dashboard) -->
+            <div class="col-lg-4 col-md-6 fade-in-up project-item" data-category="data" style="transition-delay: 0.3s;">
+                <div class="card project-card border-0 rounded-4 overflow-hidden shadow-sm h-100">
+                    <div class="project-img-wrapper position-relative">
+                        <img src="https://github.com/Abhinav122005/Samsung_SupplyChain_Data_Analysis_Dashboard/blob/main/Samsung%20SupplyChain%20Data%20Analysis%20Dashboard/Screenshot%202026-04-05%20151127.png?raw=true"
+                            class="card-img-top" alt="Samsung Dashboard">
+                        <div class="project-overlay d-flex align-items-center justify-content-center gap-3">
+                            <a href="https://github.com/Abhinav122005/Samsung_SupplyChain_Data_Analysis_Dashboard.git" target="_blank" class="btn btn-light rounded-circle p-3" title="GitHub Repo"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-body p-4">
+                        <span class="badge bg-primary-subtle text-primary mb-2">Power BI + Data Analytics</span>
+                        <h4 class="card-title fw-bold">Samsung Supply Chain Dashboard</h4>
+                        <p class="card-text text-muted">An interactive data analysis dashboard built to visualize and analyze Samsung's supply chain metrics and key performance indicators.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6 (Image Analysis) -->
+            <div class="col-lg-4 col-md-6 fade-in-up project-item" data-category="ai" style="transition-delay: 0.1s;">
+                <div class="card project-card border-0 rounded-4 overflow-hidden shadow-sm h-100">
+                    <div class="project-img-wrapper position-relative">
+                        <img src="{% static 'portfolio_app/img/image_analysis.png' %}"
+                            class="card-img-top" alt="Image Analysis">
+                        <div class="project-overlay d-flex align-items-center justify-content-center gap-3">
+                            <a href="https://github.com/Abhinav122005/image_analysis.git" target="_blank" class="btn btn-light rounded-circle p-3" title="GitHub Repo"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-body p-4">
+                        <span class="badge bg-primary-subtle text-primary mb-2">Python + Machine Learning</span>
+                        <h4 class="card-title fw-bold">AI Image Analysis</h4>
+                        <p class="card-text text-muted">An advanced image analysis application utilizing machine learning algorithms for object detection, pattern recognition, and detailed visual data extraction.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 7 (Drinking Water Analysis) -->
+            <div class="col-lg-4 col-md-6 fade-in-up project-item" data-category="data" style="transition-delay: 0.2s;">
+                <div class="card project-card border-0 rounded-4 overflow-hidden shadow-sm h-100">
+                    <div class="project-img-wrapper position-relative">
+                        <img src="{% static 'portfolio_app/img/water_analysis.png' %}"
+                            class="card-img-top" alt="Drinking Water Analysis">
+                        <div class="project-overlay d-flex align-items-center justify-content-center gap-3">
+                            <a href="https://github.com/Abhinav122005/Improved-source-of-drinking-water.git" target="_blank" class="btn btn-light rounded-circle p-3" title="GitHub Repo"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-body p-4">
+                        <span class="badge bg-primary-subtle text-primary mb-2">Python + Data Science</span>
+                        <h4 class="card-title fw-bold">Drinking Water Analysis</h4>
+                        <p class="card-text text-muted">An insightful data analysis project evaluating and predicting improved sources of drinking water using machine learning and statistical modeling.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 8 (Smart Irrigation) -->
+            <div class="col-lg-4 col-md-6 fade-in-up project-item" data-category="data" style="transition-delay: 0.3s;">
+                <div class="card project-card border-0 rounded-4 overflow-hidden shadow-sm h-100">
+                    <div class="project-img-wrapper position-relative">
+                        <img src="{% static 'portfolio_app/img/smart_irrigation.png' %}"
+                            class="card-img-top" alt="Smart Irrigation System">
+                        <div class="project-overlay d-flex align-items-center justify-content-center gap-3">
+                            <a href="https://github.com/Abhinav122005/Smart_irrigation_AICTE_Shell.git" target="_blank" class="btn btn-light rounded-circle p-3" title="GitHub Repo"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-body p-4">
+                        <span class="badge bg-primary-subtle text-primary mb-2">IoT + AI + Analytics</span>
+                        <h4 class="card-title fw-bold">Smart Irrigation System</h4>
+                        <p class="card-text text-muted">An intelligent smart irrigation platform leveraging IoT sensors and AI to optimize agricultural water usage and monitor crop health in real-time.</p>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+
+        {% if is_home_page %}
+        <div class="text-center mt-5 fade-in-up">
+            <a href="{% url 'projects' %}" class="btn btn-outline-primary btn-lg rounded-pill px-5 shadow-sm hover-lift">
+                See All Projects <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+        {% endif %}
+    </div>
+</section>

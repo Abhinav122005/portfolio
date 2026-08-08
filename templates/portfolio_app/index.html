@@ -1,0 +1,47 @@
+{% extends 'portfolio_app/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Hero Section -->
+<section id="home" class="hero-section d-flex align-items-center min-vh-100 position-relative overflow-hidden">
+    <div class="glow-circle circle-1"></div>
+    <div class="glow-circle circle-2"></div>
+    <div class="container position-relative z-1">
+        <div class="row align-items-center">
+            <div class="col-lg-7 text-center text-lg-start mb-5 mb-lg-0">
+                <h5 class="text-uppercase tracking-wide text-primary fw-bold mb-3 slide-up">Hello, I'm ABHINAV
+                    RAYABARAPU</h5>
+                <h1 class="display-2 fw-bolder text-dark mb-4 slide-up-delay-1">I am a <br><span
+                        class="text-gradient typed-text"></span><span class="cursor" style="display:inline-block; width:4px; height:0.9em; background-color:var(--primary-color); margin-left:6px; vertical-align:middle; animation:blink 1s infinite;"></span></h1>
+                <p class="lead text-muted mb-5 slide-up-delay-2 mx-auto mx-lg-0" style="max-width: 600px;">Crafting
+                    scalable backends with Django and building beautiful, responsive frontends with modern web
+                    technologies.</p>
+                <div class="slide-up-delay-3 d-flex flex-wrap justify-content-center justify-content-lg-start gap-3">
+                    <a href="{% url 'projects' %}"
+                        class="btn btn-primary btn-lg rounded-pill px-5 py-3 shadow-lg hover-lift">View Work</a>
+                    <a href="{% url 'contact' %}"
+                        class="btn btn-outline-dark btn-lg rounded-pill px-5 py-3 shadow-sm hover-lift">Hire Me</a>
+                    <a href="{% static 'portfolio_app/resume.pdf' %}" target="_blank" download
+                        class="btn btn-outline-primary btn-lg rounded-pill px-4 py-3 shadow-sm hover-lift">
+                        <i class="fas fa-download me-2"></i> Download CV
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-5 text-center fade-in-right">
+                <div class="hero-img-container d-inline-block">
+                    <img src="{% static 'portfolio_app/img/profile2.jpg' %}" alt="Profile Photo"
+                        class="rounded-circle profile-img"
+                        style="width: 450px; height: 550px; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% include 'portfolio_app/partials/about.html' %}
+{% include 'portfolio_app/partials/internships.html' %}
+{% include 'portfolio_app/partials/projects.html' %}
+{% include 'portfolio_app/partials/services.html' %}
+{% include 'portfolio_app/partials/skills.html' %}
+
+{% include 'portfolio_app/partials/contact.html' %}
+{% endblock %}
