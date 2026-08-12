@@ -138,3 +138,6 @@ EMAIL_USE_SSL = env.bool('EMAIL_USE_SSL', default=False)
 EMAIL_HOST_USER = env('EMAIL_HOST_USER', default='')  
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD', default='')
 EMAIL_TIMEOUT = 5  # Add a 5-second timeout to prevent Gunicorn crashes
+
+# Resend Configuration
+RESEND_API_KEY = env('RESEND_API_KEY', default='')

@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
+import resend
 from .models import Contact
 
 # Home Page View
@@ -46,15 +47,22 @@ def contact(request):
             
             # Send Email Notification
             try:
+                resend.api_key = settings.RESEND_API_KEY
                 email_subject = f"New Portfolio Message from {name}: {subject}"
                 email_message = f"You have received a new message from your portfolio website.\n\nName: {name}\nEmail: {email}\nSubject: {subject}\n\nMessage:\n{message}"
-                send_mail(
-                    email_subject,
-                    email_message,
-                    settings.EMAIL_HOST_USER, # From email (your authenticated email)
-                    [settings.EMAIL_HOST_USER], # To email (send to yourself)
-                    fail_silently=False,
-                )
+                
+                # Resend testing domains usually only allow sending to the verified email
+                # or from 'onboarding@resend.dev'
+                params = {
+                    "from": "onboarding@resend.dev",
+                    "to": [settings.EMAIL_HOST_USER], # The email you want to receive notifications at
+                    "subject": email_subject,
+                    "text": email_message,
+                }
+                
+                email_response = resend.Emails.send(params)
+                print(f"Resend Email Sent: {email_response}")
+                
                 messages.success(request, 'Your message has been sent successfully!')
             except Exception as e:
                 # If email fails (e.g. invalid credentials), still let user know it was saved
